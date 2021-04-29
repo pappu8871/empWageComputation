@@ -1,2 +1,2 @@
-s=$(( a * b + c ))
-echo "s:$s"
+q=$(( c + a / b ))
+echo "q:$q"
