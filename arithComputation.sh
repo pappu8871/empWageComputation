@@ -1,2 +1,4 @@
-q=$(( c + a / b ))
-echo "q:$q"
+#!/bin/bash
+
+t=$(( a % b + c ))
+echo "t:$t"
