@@ -1,20 +1,20 @@
 #!/bin/bash -x
 
 IS_PRESENT_FULL_TIME=1
+IS_PRESENT_PART_TIME=2
 WAGE_PER_HR=20
+MAX_WORKING_DAY=20
 
-#VARIABLE
-
-empCheck=$((RANDAM%2))
-
-#SELECTION
-if [ $empCheck -eq $IS_PRESENT_FULL_TIME ]
-then
-empHrs=8
-
-else
-    empHrs=0
-    fi
- Salary=$(( WAGE_PER_HR * empHrs ))
-
-
+for((counter=1;counter<= $MAX_WORKING_DAY;counter++))
+do
+employeeCheck=$((Random%3))
+case $employeeCheck in
+    $IS_PREESENT_FULL_TIME)
+empHrs=8;;
+$IS_PRESENT_PART_TIME)
+  empHrs=4;;
+*)
+empHrs=0;;
+esac
+salary=$(($empHrs * $WAGE_PER_HR))
+done
