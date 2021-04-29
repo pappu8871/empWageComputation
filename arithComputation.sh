@@ -1,4 +1,2 @@
-#!/bin/bash
-
-p=$(( a + b * c ))
-echo "p:$p"
+s=$(( a * b + c ))
+echo "s:$s"
