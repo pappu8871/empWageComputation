@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 echo "Please enter your first number: "
 read a
@@ -25,23 +23,21 @@ arrayName=( $p $q $r $s )
 
 echo ${arrayName[@]}
 
-  
- 
-for ((i = 0; i<4; i++))
+for (( i = 0; i <4 ; i++ ))
 do
-      
-    for((j = 0; j<4-i-1; j++))
-    do
-      
-        if [ ${arrayName[j]} -gt ${arrayName[$((j+1))]} ]
-        then
-            # swap
-            temp=${arrayName[j]}
-            arrayName[$j]=${arrayName[$((j+1))]}  
-            arrayName[$((j+1))]=$temp
-        fi
-    done
+for (( j =1; j <4; j++ ))
+do
+if [ ${arrayName[i]} -lt ${arrayName[j+1]} ]; then
+temp=${arrayName[i]}
+arrayName[$i]=${arrayName[j+1]}
+arrayName[$j+1]=$temp
+fi
 done
-  
-echo "Array in sorted order :"
-echo ${[@]}
+done
+
+echo "Sorted Computation for descending order"
+
+for (( i=0; i <4; i++ ))
+do
+echo ${arrayName[$i]}
+done
