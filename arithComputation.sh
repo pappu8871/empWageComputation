@@ -1,3 +1,5 @@
+
+
 #!/bin/bash
 echo "Please enter your first number: "
 read a
@@ -16,9 +18,8 @@ echo "s:$s"
 
 r=$(( a % b + c ))
 echo "r:$r"
-
-s=$(( a * b + c ))
-echo "s:$s"
+q=$(( c + a / b ))
+echo "q:$q"
 
 arrayName=( $p $q $r $s )
 
@@ -26,10 +27,10 @@ echo ${arrayName[@]}
 
   
  
-for ((i = 0; i<5; i++))
+for ((i = 0; i<4; i++))
 do
       
-    for((j = 0; j<5-i-1; j++))
+    for((j = 0; j<4-i-1; j++))
     do
       
         if [ ${arrayName[j]} -gt ${arrayName[$((j+1))]} ]
@@ -43,4 +44,4 @@ do
 done
   
 echo "Array in sorted order :"
-echo ${arrayName[@]}
+echo ${[@]}
